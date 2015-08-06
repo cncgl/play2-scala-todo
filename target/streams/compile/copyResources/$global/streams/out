@@ -1,0 +1,4 @@
+[debug] Copy resource mappings: 
+[debug] 	(/home/shigeru/test/play2-2/app/conf/routes,/home/shigeru/test/play2-2/app/target/scala-2.11/classes/routes)
+[debug] 	(/home/shigeru/test/play2-2/app/conf/logback.xml,/home/shigeru/test/play2-2/app/target/scala-2.11/classes/logback.xml)
+[debug] 	(/home/shigeru/test/play2-2/app/conf/application.conf,/home/shigeru/test/play2-2/app/target/scala-2.11/classes/application.conf)

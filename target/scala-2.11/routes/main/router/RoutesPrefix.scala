@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/shigeru/test/play2-2/app/conf/routes
-// @DATE:Thu Aug 06 16:02:30 JST 2015
+// @SOURCE:/home/shigeru/test/play2-scala-todo/conf/routes
+// @DATE:Thu Sep 24 17:14:24 JST 2015
 
 
 package router {

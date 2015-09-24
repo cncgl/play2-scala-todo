@@ -4,7 +4,7 @@
 		module="app_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20150806232921"
+		publication="20150924150947"
 	>
 		<description>
 		app
@@ -33,13 +33,18 @@
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.6" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.6" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="twirl-api_2.11" rev="1.1.1" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-server_2.11" rev="2.4.2" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-test_2.11" rev="2.4.2" conf="test->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-omnidoc_2.11" rev="2.4.2" conf="docs->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-netty-server_2.11" rev="2.4.2" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-jdbc_2.11" rev="2.4.2" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.4.2" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-ws_2.11" rev="2.4.2" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-specs2_2.11" rev="2.4.2" conf="test->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-server_2.11" rev="2.4.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-test_2.11" rev="2.4.3" conf="test->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-omnidoc_2.11" rev="2.4.3" conf="docs->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-netty-server_2.11" rev="2.4.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-jdbc_2.11" rev="2.4.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.4.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-ws_2.11" rev="2.4.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-specs2_2.11" rev="2.4.3" conf="test->default(compile)"/>
+		<dependency org="com.typesafe.slick" name="slick_2.11" rev="3.0.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.slick" name="slick-codegen_2.11" rev="3.0.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-slick_2.11" rev="1.0.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-slick-evolutions_2.11" rev="1.0.1" conf="compile->default(compile)"/>
+		<dependency org="org.postgresql" name="postgresql" rev="9.3-1102-jdbc41" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

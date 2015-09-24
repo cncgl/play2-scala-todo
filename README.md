@@ -1,2 +1,11 @@
-# play2-sample
-WIP: Play2.4 sample
+# play2-scala-todo
+Todo Application on Play2 / Scala
+
+## How to use
+```
+$ activator run
+```
+
+
+## License
+MIT

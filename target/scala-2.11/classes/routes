@@ -6,6 +6,7 @@
 GET        /                    controllers.Application.index
 
 GET        /todos               controllers.Todo.index
+GET        /todos/:id           controllers.Todo.show(id: Long)
 
 
 # Map static resources from the /public folder to the /assets URL path

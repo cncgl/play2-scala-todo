@@ -26,4 +26,19 @@ class Todo extends Controller {
     }
   }
 
+  def show(id: Long) = Action {
+    DB.withConnection { implicit c =>
+      val record = SQL("select id,status,title from todos where id = {id}").on("id" -> id)().map {
+        row => (row[Int]("id").toString,
+          Map(
+            "id"     -> JsNumber(row[Int]("id")),
+            "status" -> JsBoolean(row[Boolean]("status")),
+            "title"  -> JsString(row[String]("title"))
+          ))
+      }.toMap
+
+      Ok(Json.toJson(record))
+    }
+  }
+
 }

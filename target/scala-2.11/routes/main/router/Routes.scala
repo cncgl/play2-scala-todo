@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/shigeru/test/play2-scala-todo/conf/routes
-// @DATE:Thu Sep 24 17:14:24 JST 2015
+// @DATE:Thu Sep 24 19:57:56 JST 2015
 
 package router
 
@@ -19,7 +19,7 @@ class Routes(
   Application_2: controllers.Application,
   // @LINE:8
   Todo_1: controllers.Todo,
-  // @LINE:12
+  // @LINE:13
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -30,7 +30,7 @@ class Routes(
     Application_2: controllers.Application,
     // @LINE:8
     Todo_1: controllers.Todo,
-    // @LINE:12
+    // @LINE:13
     Assets_0: controllers.Assets
   ) = this(errorHandler, Application_2, Todo_1, Assets_0, "/")
 
@@ -48,6 +48,7 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.Application.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """todos""", """controllers.Todo.index"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """todos/$id<[^/]+>""", """controllers.Todo.show(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -90,11 +91,28 @@ class Routes(
     )
   )
 
-  // @LINE:12
-  private[this] lazy val controllers_Assets_versioned2_route = Route("GET",
+  // @LINE:9
+  private[this] lazy val controllers_Todo_show2_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("todos/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_Todo_show2_invoker = createInvoker(
+    Todo_1.show(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Todo",
+      "show",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """todos/$id<[^/]+>"""
+    )
+  )
+
+  // @LINE:13
+  private[this] lazy val controllers_Assets_versioned3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned2_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned3_invoker = createInvoker(
     Assets_0.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -122,10 +140,16 @@ class Routes(
         controllers_Todo_index1_invoker.call(Todo_1.index)
       }
   
-    // @LINE:12
-    case controllers_Assets_versioned2_route(params) =>
+    // @LINE:9
+    case controllers_Todo_show2_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_Todo_show2_invoker.call(Todo_1.show(id))
+      }
+  
+    // @LINE:13
+    case controllers_Assets_versioned3_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned2_invoker.call(Assets_0.versioned(path, file))
+        controllers_Assets_versioned3_invoker.call(Assets_0.versioned(path, file))
       }
   }
 }

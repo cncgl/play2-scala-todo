@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/shigeru/test/play2-scala-todo/conf/routes
-// @DATE:Thu Sep 24 17:14:24 JST 2015
+// @DATE:Thu Sep 24 19:57:56 JST 2015
 
 package controllers;
 

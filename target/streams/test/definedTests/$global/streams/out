@@ -1,2 +1,0 @@
-[debug] Subclass fingerprints: List((org.specs2.specification.core.SpecificationStructure,true,specs2 Specification fingerprint), (org.specs2.specification.core.SpecificationStructure,false,specs2 Specification fingerprint), (junit.framework.TestCase,false,com.novocode.junit.JUnit3Fingerprint@2991b5e2))
-[debug] Annotation fingerprints: List((org.junit.runner.RunWith,false,com.novocode.junit.RunWithFingerprint@302a9e50), (org.junit.Test,false,com.novocode.junit.JUnitFingerprint@14300312))

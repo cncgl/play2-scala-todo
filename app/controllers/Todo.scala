@@ -7,6 +7,8 @@ import anorm._
 import play.api.db._
 import play.api.mvc._
 import play.api.libs.json._
+import play.api.libs.json.Reads._
+import play.api.libs.functional.syntax._
 //import domain.todo.Todo
 
 /**
@@ -76,5 +78,22 @@ class Todo extends Controller {
 
 }
 
-case class TodoResource(val status: Boolean, val title: String)
-
+case class TodoResource(status: Boolean, title: String)
+object TodoResource {
+  implicit val todoResourceFormat: Format[TodoResource] = (
+    (__ \ "status").format[Boolean] and
+    (__ \ "title").format[String]
+  )(TodoResource.apply, unlift(TodoResource.unapply))
+  /*
+  implicit object TodoResourceFormat extends Format[TodoResource] {
+    def reads(json: JsValue): TodoResource = TodoResource(
+      (json \ "status").as[Boolean] ,
+      (json \ "title").as[String]
+    )
+    def writes(t: TodoResource): JsValue = JsObject(Seq(
+      "status" -> JsBoolean(t.status),
+      "title"  -> JsString(t.title)
+    ))
+  }
+  */
+}

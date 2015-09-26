@@ -46,8 +46,8 @@ class Todo extends Controller {
     }
   }
 
-  def create = Action(parse.json) {
-    request => unmarshalTodoResource( request, (resource: TodoResource) => {
+  def create = Action(parse.json) { request =>
+    unmarshalTodoResource( request, (resource: TodoResource) => {
       val todo = domain.todo.Todo(Option.empty, resource.status, resource.title)
       DB.withConnection { implicit c =>
         val id: Int = SQL("insert into todos (status, title, inserted_at, updated_at) values ({status}, {title}, {inserted_at}, {updated_at})").
@@ -56,6 +56,19 @@ class Todo extends Controller {
       }
 
       Created
+    })
+  }
+
+  def update(id: Long) = Action(parse.json) { request =>
+    unmarshalTodoResource( request, (resource: TodoResource) => {
+      val todo = domain.todo.Todo(Option(id), resource.status, resource.title)
+      DB.withConnection { implicit c =>
+        SQL("update todos set status={status}, title={title} where id={id}").
+        on("status" -> todo.status, "title" -> todo.title, "id" -> id).
+        executeUpdate()
+      }
+
+      NoContent
     })
   }
 

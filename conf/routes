@@ -8,6 +8,8 @@ GET           /                     controllers.Application.index
 GET           /api/todos            controllers.Todo.index
 GET           /api/todos/:id        controllers.Todo.show(id: Long)
 POST          /api/todos            controllers.Todo.create
+PUT           /api/todos/:id        controllers.Todo.update(id: Long)
+PATCH         /api/todos/:id        controllers.Todo.update(id: Long)
 DELETE        /api/todos/:id        controllers.Todo.delete(id: Long)
 
 

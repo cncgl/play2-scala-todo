@@ -12,7 +12,8 @@ import play.api.libs.functional.syntax._
 //import domain.todo.Todo
 
 /**
- * Created by shigeru on 15/09/24.
+ * Controller for Todo model.
+ * Created by cncgl on 15/09/24.
  */
 class Todo extends Controller {
 

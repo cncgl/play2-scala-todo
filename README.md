@@ -3,7 +3,7 @@ Todo Application on Play2 / Scala
 
 ## Usage
 ```
-$ activator run
+$ JAVA_OPTS=-Dhttps.port=9443 activator run
 ```
 
 ## API
@@ -33,6 +33,8 @@ delete
 ```
 $ curl http://localhost:9000/api/todos/:id -X DELETE
 ```
+
+or https://localhost:9443/<PATH>
 
 ## License
 MIT

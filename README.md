@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cncgl/play2-scala-todo.svg?branch=master)](https://travis-ci.org/cncgl/play2-scala-todo)
+
 # play2-scala-todo
 Todo Application on Play2 / Scala
 

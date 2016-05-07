@@ -39,4 +39,4 @@ $ curl http://localhost:9000/api/todos/:id -X DELETE
 or ``https://localhost:9443/<PATH>``
 
 ## License
-MIT
+[MIT](LICENSE)

@@ -3,6 +3,13 @@
 # play2-scala-todo
 Todo Application on Play2 / Scala
 
+## Prepare Database
+Create user ``postgress`` with password ``postgres``.
+Create database ``play2_todo``
+```
+$ activator flywayMigrate
+```
+
 ## Usage
 ```
 $ JAVA_OPTS=-Dhttps.port=9443 activator run
@@ -37,6 +44,12 @@ $ curl http://localhost:9000/api/todos/:id -X DELETE
 ```
 
 or ``https://localhost:9443/<PATH>``
+
+## For develop
+show outdated
+```
+$ activator dependencyUpdates
+```
 
 ## License
 [MIT](LICENSE)
